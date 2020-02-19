@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [10.x]
 
     steps:
       - name: 开始运行
@@ -42,7 +42,6 @@ jobs:
         run: |
           hexo g -d
           cd ./public
-          git init
           git config user.name "${{secrets.GIT_NAME}}"
           git config user.email "${{secrets.GIT_EMAIL}}"
           git add .
